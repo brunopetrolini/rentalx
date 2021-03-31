@@ -9,6 +9,7 @@ import { router } from "@shared/infra/http/routes";
 import swaggerFile from "../../../swagger.json";
 
 import "@shared/infra/typeorm";
+import "@shared/container";
 
 const app = express();
 
