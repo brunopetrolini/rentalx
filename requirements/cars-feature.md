@@ -3,12 +3,10 @@
 ## Cadastro de Carros
 
 ### Requisitos Funcionais
-- Deve ser possível cadastrar um novo carro;
-- Deve ser possível listar todas as caregorias;
+- 🗹 Deve ser possível cadastrar um novo carro;
 
 ### Use Cases
-- Não deve ser possível cadastrar um carro com uma placa já existente;
-- Não deve ser possível alterar a placa de um carro já cadastrado;
+- 🗹 Não deve ser possível cadastrar um carro com uma placa já existente;
 - O carro deve ser cadastrado, por padrão, como dísponivel;
 - Não deve ser possível o cadastro de um novo carro por um usuário não admin;
 
