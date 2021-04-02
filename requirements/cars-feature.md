@@ -8,7 +8,7 @@
 ### Use Cases
 - 🗹 Não deve ser possível cadastrar um carro com uma placa já existente;
 - 🗹 O carro deve ser cadastrado, por padrão, como dísponivel;
-- Não deve ser possível o cadastro de um novo carro por um usuário não admin;
+- 🗹 Não deve ser possível o cadastro de um novo carro por um usuário não admin;
 
 ## Listagem de carros
 
