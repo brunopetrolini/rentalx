@@ -27,9 +27,9 @@
 - 🗹 Deve ser possível cadastrar uma especifícação para um carro;
 
 ### Use Cases
-- Não deve ser possível cadastrar uma especificação para um carro não registrado;
-- Não deve ser possível cadastrar uma especificação já existente para o mesmo carro;
-- Não deve ser possível de uma nova especifição por um usuário não admin;
+- 🗹 Não deve ser possível cadastrar uma especificação para um carro não registrado;
+- 🗹 Não deve ser possível cadastrar uma especificação já existente para o mesmo carro;
+- 🗹 Não deve ser possível de uma nova especifição por um usuário não admin;
 
 ## Cadastro de imagens do carro
 
