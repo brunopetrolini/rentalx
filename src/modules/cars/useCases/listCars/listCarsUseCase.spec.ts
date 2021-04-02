@@ -58,4 +58,22 @@ describe("List cars", () => {
 
     expect(cars).toEqual([car]);
   });
+
+  it("Should be able to list all available cars by category id", async () => {
+    const car = await carsRepository.create({
+      name: "3_car_name",
+      description: "3_car_description",
+      daily_rate: 110,
+      license_plate: "3_car_plate",
+      fine_amount: 60,
+      brand: "3_car_brand",
+      category_id: "3_category_id",
+    });
+
+    const cars = await listCarsUseCase.execute({
+      category_id: "3_category_id",
+    });
+
+    expect(cars).toEqual([car]);
+  });
 });
