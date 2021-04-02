@@ -18,17 +18,13 @@
 - 🗹 Deve ser possível listar todos os carros disponíveis pelo nome da marca;
 - 🗹 Deve ser possível listar todos os carros disponíveis pelo nome do carro;
 
-### Requisitos não Funcionais
-
 ### Use Cases
-- O usuário não precisa estar logado no sistema;
+- 🗹 O usuário não precisa estar logado no sistema;
 
 ## Cadastro de Especificação do carro
 
 ### Requisitos Funcionais
-- Deve ser possível cadastrar uma especifícação para um carro;
-- Deve ser possível listar todas as especifícações;
-- Deve ser possível listar todos os carros;
+- 🗹 Deve ser possível cadastrar uma especifícação para um carro;
 
 ### Use Cases
 - Não deve ser possível cadastrar uma especificação para um carro não registrado;
