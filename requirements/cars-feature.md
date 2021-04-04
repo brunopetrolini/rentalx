@@ -34,12 +34,12 @@
 ## Cadastro de imagens do carro
 
 ### Requisitos Funcionais
-- Deve ser possível adicionar a imagem do carro;
-- Deve ser possível listar todos os carros;
+- 🗹 Deve ser possível adicionar a imagem do carro;
+- 🗹 Deve ser possível listar todos os carros;
 
 ### Requisitos não funcionais
-- Utilizar o multer para upload dos arquivos;
+- 🗹 Utilizar o multer para upload dos arquivos;
 
 ### Use Cases
-- O usuário deve poder cadastrar mais de uma imagem para o mesmo carro;
-- Não deve ser possível a adição de uma imagem por um usuário não admin;
+- 🗹 O usuário deve poder cadastrar mais de uma imagem para o mesmo carro;
+- 🗹 Não deve ser possível a adição de uma imagem por um usuário não admin;
