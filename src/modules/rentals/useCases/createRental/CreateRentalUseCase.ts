@@ -1,7 +1,11 @@
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 import { AppError } from "@shared/errors/AppError";
 
+dayjs.extend(utc);
 interface IRequest {
   user_id: string;
   car_id: string;
@@ -31,6 +35,16 @@ class CreateRentalUseCase {
     if (rentalOpenToUser) {
       throw new AppError("There's alredy an open rent for this user", 400);
     }
+
+    const expectedReturnDateFormat = dayjs(expected_return_date)
+      .utc()
+      .local()
+      .format();
+    const dateNow = dayjs().utc().local().format();
+
+    const compare = dayjs(expected_return_date).diff(dateNow, "hours");
+
+    console.log("Compare date", compare);
 
     const rental = await this.rentalsRepository.create({
       user_id,
