@@ -58,4 +58,14 @@ describe("Create Rental", () => {
       });
     }).rejects.toBeInstanceOf(AppError);
   });
+
+  it("Should not be able to create a rental with less then 24 hours", () => {
+    expect(async () => {
+      await createRentalUseCase.execute({
+        user_id: "any_user_id",
+        car_id: "any_car_id",
+        expected_return_date: dayjs().toDate(),
+      });
+    }).rejects.toBeInstanceOf(AppError);
+  });
 });

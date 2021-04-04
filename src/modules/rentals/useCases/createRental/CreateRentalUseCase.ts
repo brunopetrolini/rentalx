@@ -20,6 +20,8 @@ class CreateRentalUseCase {
     car_id,
     expected_return_date,
   }: IRequest): Promise<Rental> {
+    const minRentalHours = 24;
+
     const carUnavailable = await this.rentalsRepository.findOpenRentalByCar(
       car_id
     );
@@ -33,7 +35,7 @@ class CreateRentalUseCase {
     );
 
     if (rentalOpenToUser) {
-      throw new AppError("There's alredy an open rent for this user", 400);
+      throw new AppError("There's already an open rent for this user", 400);
     }
 
     const expectedReturnDateFormat = dayjs(expected_return_date)
@@ -42,9 +44,11 @@ class CreateRentalUseCase {
       .format();
     const dateNow = dayjs().utc().local().format();
 
-    const compare = dayjs(expected_return_date).diff(dateNow, "hours");
+    const compare = dayjs(expectedReturnDateFormat).diff(dateNow, "hours");
 
-    console.log("Compare date", compare);
+    if (compare < minRentalHours) {
+      throw new AppError("Unable to register a rent with less then 24 hours");
+    }
 
     const rental = await this.rentalsRepository.create({
       user_id,
