@@ -5,11 +5,15 @@ import { ListRentalsByUserUseCase } from "./ListRentalsByUserUseCase";
 
 class ListRentalsByUserController {
   async handle(request: Request, response: Response): Promise<Response> {
+    const { id: user_id } = request.user;
+
     const listRentalsByUserUseCase = container.resolve(
       ListRentalsByUserUseCase
     );
 
-    return response.status(200).send();
+    const rentals = await listRentalsByUserUseCase.execute(user_id);
+
+    return response.status(200).json(rentals);
   }
 }
 
