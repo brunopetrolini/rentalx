@@ -37,7 +37,7 @@ class CreateRentalUseCase {
     );
 
     if (carUnavailable) {
-      throw new AppError("Car is unavailable", 400);
+      throw new AppError("Car is unavailable");
     }
 
     const rentalOpenToUser = await this.rentalsRepository.findOpenRentalByUser(
@@ -45,7 +45,7 @@ class CreateRentalUseCase {
     );
 
     if (rentalOpenToUser) {
-      throw new AppError("There's already an open rent for this user", 400);
+      throw new AppError("There's already an open rent for this user");
     }
 
     const compare = this.dateProvider.compareInHours(
