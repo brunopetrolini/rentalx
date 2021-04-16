@@ -5,6 +5,6 @@ import { SendForgetPasswordMailController } from "@modules/accounts/useCases/sen
 const passwordRoutes = Router();
 
 const sendForgotPasswordMailController = new SendForgetPasswordMailController();
-passwordRoutes.post("/", sendForgotPasswordMailController.handle);
+passwordRoutes.post("/forgot", sendForgotPasswordMailController.handle);
 
 export { passwordRoutes };
