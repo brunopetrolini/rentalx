@@ -61,8 +61,6 @@ class SendForgotPasswordMailUseCase {
       variables,
       templatePath
     );
-
-    return null;
   }
 }
 
