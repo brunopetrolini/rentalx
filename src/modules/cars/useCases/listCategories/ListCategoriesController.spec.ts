@@ -32,7 +32,7 @@ describe("Create category controller", () => {
       .post("/sessions")
       .send({ email: "admin@rentalx.com.br", password: "master" });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     await request(app)
       .post("/categories")
@@ -41,7 +41,7 @@ describe("Create category controller", () => {
         description: "Category Supertest",
       })
       .set({
-        Authorization: `baerer ${token}`,
+        Authorization: `baerer ${refresh_token}`,
       });
 
     const response = await request(app).get("/categories");
