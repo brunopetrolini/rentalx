@@ -46,4 +46,19 @@ describe("Send Forgot Email", () => {
       sendForgotPasswordMailUseCase.execute("edodin@ade.at")
     ).rejects.toEqual(new AppError("User does not exists"));
   });
+
+  it("Should be able to create an users token", async () => {
+    const generateTokenMail = spyOn(usersTokensRepository, "create");
+
+    await usersRepository.create({
+      name: "Julian Francis",
+      email: "zesihjuc@foj.ge",
+      password: "U2RkFd11",
+      driver_license: "792463290",
+    });
+
+    await sendForgotPasswordMailUseCase.execute("zesihjuc@foj.ge");
+
+    expect(generateTokenMail).toBeCalledTimes(1);
+  });
 });
